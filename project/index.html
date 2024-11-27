@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
 </head>
 <body>
-    
+
+    <div class="title">
+        <h1>Dashboard - Amostra de dados de Bibliotecas em Pernambuco / <span id="bold-text">Censo Escolar 2023</span> </h1>
+    </div>
+
+    <div class="chart chart1">
+        <div class="chart-title">
+            <h3>Quantidade de Bibliotecas por Zonas Regionais em Pernambuco</h3>
+            <p>Dados de 2023</p>
+        </div>
+
+        <div class="container-chart chart1" style="width:400px; height: 400px;">
+            <canvas id="chart1" style="width:300px; height: 300px;"></canvas>
+        </div>
+
+    </div>  
+
+    <div class="container-text">
+        <h2>Olá!</h2>
+        <h4>Esse é o nosso projeto da cadeira Programação Web</h4>
+        <p>Este projeto aplica habilidades em JavaScript, HTML, CSS e consumo de APIs REST, utilizando o Back4App como back-end. Com dados do Censo Escolar 2023 e um recorte baseado no MiniMundo do Projeto de Banco de Dados (que visa exibir dados sobre bibliotecas nas escolas do estado de Pernambuco.)
+            O dashboard foi criado como uma solução integrada para consolidar os trabalhos e colocar em prática os conhecimentos adquiridos.</p>
+    </div>
+
+    <div class="chart chart2">
+        <div class="chart-title">
+            <h3>Bibliotecas que possuem Equipamentos Tecnológicos</h3>
+        </div>
+
+        <div class="container-chart chart2" style="width:400px; height: 400px;">
+            <canvas id="chart2" style="width:300px; height: 300px;"></canvas>
+        </div>
+
+    <div class="chart chart3">
+        <div class="chart-title">
+            <h3>Quantidade de Bibliotecários nas Escolas</h3>
+        </div>
+
+        <div class="container-chart chart3" style="width:400px; height: 400px;">
+            <canvas id="chart3" style="width:300px; height: 300px;"></canvas>
+        </div>
+
+    </div>
 </body>
 </html>
