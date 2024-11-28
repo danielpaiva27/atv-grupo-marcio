@@ -33,7 +33,6 @@ async function getDataPorRegiao(regiao) {
             NO_REGIAO: regiao
         })
     })
-    console.log(`https://parseapi.back4app.com/classes/censo_esc_2023/${where.toString()}`);
     
     let data = await fetch(`https://parseapi.back4app.com/classes/censo_esc_2023?${where.toString()}`,{
         method: 'GET',
