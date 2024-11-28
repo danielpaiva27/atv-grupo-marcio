@@ -10,7 +10,7 @@ const azul = getComputedStyle(document.documentElement).getPropertyValue('--azul
 
 let labelsX = ["Agreste", "Zona da Mata", "Sertão"];
 
-let valoresPrivado = [12, 3, 5];  
+let valoresPrivado = [12, 3, 5]; 
 let valoresPublica = [8, 6, 4];  
 
 new Chart(ctx, {
