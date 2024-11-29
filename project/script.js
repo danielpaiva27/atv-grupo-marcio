@@ -115,7 +115,7 @@ new Chart(ctx4, {
       borderWidth: 1
     }, {
       label: 'Pública',
-      backgroundColor: cinza,
+      backgroundColor: roxo,
       data: valoresPublica,
       borderWidth: 1
     }]
