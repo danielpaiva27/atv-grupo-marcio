@@ -45,3 +45,24 @@ async function getDataPorRegiao(regiao) {
     return data
 }
 
+async function getDataPorEscola(escola) {
+    
+    let where = new URLSearchParams({
+        where: JSON.stringify({
+            NO_ENTIDADE: String(escola).toUpperCase()
+        })
+    })
+    
+    let data = await fetch(`https://parseapi.back4app.com/classes/censo_esc_2023?${where.toString()}`,{
+        method: 'GET',
+        headers: headerJason
+    }).then((data)=>{
+        return data.json()
+    })
+
+    console.log(data);
+    return data
+
+}
+
+getDataPorEscola("escola 19 de julho");
