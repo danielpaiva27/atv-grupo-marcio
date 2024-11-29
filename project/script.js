@@ -1,7 +1,8 @@
 const ctx = document.getElementById('chart1').getContext('2d');
 const ctx2 = document.getElementById('chart2').getContext('2d');
 const ctx3 = document.getElementById('chart3').getContext('2d');
-    
+const ctx4 = document.getElementById('chart4').getContext('2d');    
+
 const roxo = getComputedStyle(document.documentElement).getPropertyValue('--roxo').trim();
 const cinza = getComputedStyle(document.documentElement).getPropertyValue('--cinza').trim();
 const verde = getComputedStyle(document.documentElement).getPropertyValue('--verde').trim();
@@ -102,3 +103,32 @@ new Chart(ctx3, {
       }
     }
   });
+
+new Chart(ctx4, {
+  type: 'pie', 
+  data: {
+    labels: labelsX,
+    datasets: [{
+      label: 'Privado',
+      backgroundColor: verde, 
+      data: valoresPrivado,
+      borderWidth: 1
+    }, {
+      label: 'Pública',
+      backgroundColor: cinza,
+      data: valoresPublica,
+      borderWidth: 1
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      tooltip: {
+        enabled: true
+      }
+    }
+  }
+});
