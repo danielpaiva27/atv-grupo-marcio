@@ -65,4 +65,23 @@ async function getDataPorEscola(escola) {
 
 }
 
-getDataPorEscola("escola 19 de julho");
+async function getDataPorBairro(bairro) {
+    
+    let where = new URLSearchParams({
+        where: JSON.stringify({
+            NO_BAIRRO: String(bairro).toUpperCase()
+        })
+    })
+    
+    let data = await fetch(`https://parseapi.back4app.com/classes/censo_esc_2023?${where.toString()}`,{
+        method: 'GET',
+        headers: headerJason
+    }).then((data)=>{
+        return data.json()
+    })
+
+    console.log(data);
+    return data
+
+}
+getDataPorBairro("cajueiro seco")
