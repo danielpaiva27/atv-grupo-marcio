@@ -1,3 +1,12 @@
+const Parse = require('parse/node')
+
+Parse.serverURL = 'https://parseapi.back4app.com'; 
+
+Parse.initialize(
+  'u3w3KPgn5ja6f1i7XW2OVnilH9vceeVtlKvhVv6D',
+  'KmiuyRNhRdaExPIvsucfvc3JUIPD3hoKeHkaCApN' 
+)
+
 let header = {
     'X-Parse-Application-Id': 'u3w3KPgn5ja6f1i7XW2OVnilH9vceeVtlKvhVv6D',
     'X-Parse-REST-API-Key': 'QYqdyz2IUhM175KWtEqiDX7adZN9KXUtOSrSp3IA'
@@ -41,7 +50,17 @@ async function getDataPorRegiao(regiao) {
         return data.json()
     })
 
-    console.log(data);
+    return data
+}
+
+async function getAll(){
+    const querySchool = new Parse.Query('censo_esc_2023')
+    querySchool.select('NO_ENTIDADE','NO_REGIAO')
+    querySchool.limit(100)
+    let data = await querySchool.find().then((dataSchools)=>{
+        return dataSchools
+    })
+    
     return data
 }
 
