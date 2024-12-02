@@ -6,6 +6,7 @@ Parse.initialize(
 )
 
 window.onload = async ()=>{
+let loaders = document.querySelectorAll('.loader')
 
 let labelsX = [
     'Agreste Pernambucano',
@@ -19,52 +20,6 @@ let qntBibliotecasPublicas = []
 let qntBibliotecarioPrivadas = [] 
 let qntBibliotecarioPublicas = [] 
 
-async function getEscolasPorMesorregiao(mesorregiao) {
-    const limiteDeRegisros = 250; 
-    let escolas = []; 
-    let skip = 0;
-    let hasMoreData = true;
-    let bibliotecasPrivadasCont = 0
-    let bibliotecasPublicasCont = 0
-    let qntBibliotecarioPrivadas = 0
-    let qntBibliotecarioPublicas = 0
-
-    try {
-        while (hasMoreData) {
-    
-            const querySchool = new Parse.Query('censo_esc_2023');
-            querySchool.select('QT_PROF_BIBLIOTECARIO','TP_DEPENDENCIA','NO_MESORREGIAO','NO_ENTIDADE', 'NO_REGIAO','iN_BIBLIOTECA');
-            querySchool.limit(limiteDeRegisros);
-            querySchool.skip(skip);
-            querySchool.equalTo('NO_MESORREGIAO', mesorregiao)
-    
-            const data = await querySchool.find();
-            
-            if (data.length > 0) {
-                for (const escola of data) {
-                    if (Number(escola.get('TP_DEPENDENCIA')) == 4) {
-                        bibliotecasPrivadasCont++
-                        qntBibliotecarioPrivadas += Number(escola.get('QT_PROF_BIBLIOTECARIO'))
-                      } else {
-                        bibliotecasPublicasCont++
-                        qntBibliotecarioPublicas += Number(escola.get('QT_PROF_BIBLIOTECARIO'))
-                    }
-                }
-
-                escolas = escolas.concat(data); 
-                skip += limiteDeRegisros; 
-            } else {
-                hasMoreData = false;             
-            }
-        }
-        console.log(`${bibliotecasPrivadasCont} - ${bibliotecasPublicasCont}`);
-        
-        return [bibliotecasPrivadasCont, bibliotecasPublicasCont, qntBibliotecarioPrivadas, qntBibliotecarioPublicas]; 
-    } catch (error) {
-        throw error; 
-    }
-}
-
 for (const mesorregiao of labelsX) {
   let dadosBibliotecas = await getEscolasPorMesorregiao(mesorregiao)
   qntBiblioecasPrivadas.push(dadosBibliotecas[0])
@@ -72,8 +27,57 @@ for (const mesorregiao of labelsX) {
   qntBibliotecarioPrivadas.push(dadosBibliotecas[2])
   qntBibliotecarioPublicas.push(dadosBibliotecas[3])
 }
+for (const loader of loaders) {
+    loader.remove()
+}
 
 gerarGraficos(labelsX, qntBiblioecasPrivadas, qntBibliotecasPublicas, qntBibliotecarioPrivadas, qntBibliotecarioPublicas)
+}
+
+async function getEscolasPorMesorregiao(mesorregiao) {
+
+  const limiteDeRegisros = 250; 
+  let escolas = []; 
+  let skip = 0;
+  let hasMoreData = true;
+  let bibliotecasPrivadasCont = 0
+  let bibliotecasPublicasCont = 0
+  let qntBibliotecarioPrivadas = 0
+  let qntBibliotecarioPublicas = 0
+
+  try {
+      while (hasMoreData) {
+  
+          const querySchool = new Parse.Query('censo_esc_2023');
+          querySchool.select('QT_PROF_BIBLIOTECARIO','TP_DEPENDENCIA','NO_MESORREGIAO','NO_ENTIDADE', 'NO_REGIAO','iN_BIBLIOTECA');
+          querySchool.limit(limiteDeRegisros);
+          querySchool.skip(skip);
+          querySchool.equalTo('NO_MESORREGIAO', mesorregiao)
+  
+          const data = await querySchool.find();
+          
+          if (data.length > 0) {
+              for (const escola of data) {
+                  if (Number(escola.get('TP_DEPENDENCIA')) == 4) {
+                      bibliotecasPrivadasCont++
+                      qntBibliotecarioPrivadas += Number(escola.get('QT_PROF_BIBLIOTECARIO'))
+                    } else {
+                      bibliotecasPublicasCont++
+                      qntBibliotecarioPublicas += Number(escola.get('QT_PROF_BIBLIOTECARIO'))
+                  }
+              }
+
+              escolas = escolas.concat(data); 
+              skip += limiteDeRegisros; 
+          } else {
+              hasMoreData = false;             
+          }
+      }
+      
+      return [bibliotecasPrivadasCont, bibliotecasPublicasCont, qntBibliotecarioPrivadas, qntBibliotecarioPublicas]; 
+  } catch (error) {
+      throw error; 
+  }
 }
 
 function gerarGraficos(labelsX, qntBiblioecasPrivadas, qntBibliotecasPublicas, qntBibliotecarioPrivadas, qntBibliotecarioPublicas){
