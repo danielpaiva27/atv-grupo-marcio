@@ -10,7 +10,7 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #e3e9f7;
+    background-color: #f8f9fa; /* Cinza claro para fundo geral */
 }
 
 main {
@@ -24,13 +24,14 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: #ffffff; /* Branco para um contraste leve */
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
     transition: all .5s;
     min-width: 82px;
     z-index: 2;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 #sidebar_content {
@@ -57,7 +58,7 @@ main {
 }
 
 #user_infos span:last-child {
-    color: #6b6b6b;
+    color: #6c757d; /* Cinza suave */
     font-size: 12px;
 }
 
@@ -72,15 +73,17 @@ main {
     border-radius: 8px;
     padding: 14px;
     cursor: pointer;
+    transition: background-color .3s, color .3s;
 }
 
 .side-item.active {
-    background-color: #4f46e5;
+    background-color: #007bff; /* Azul principal */
+    color: #ffffff;
 }
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e3e9f7;
+    background-color: #f1f3f5; /* Cinza mais claro para hover */
 }
 
 .side-item a {
@@ -88,11 +91,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0a0a0a;
+    color: #212529; /* Preto suave */
 }
 
 .side-item.active a {
-    color: #e3e9f7;
+    color: #ffffff;
 }
 
 .side-item a i {
@@ -104,34 +107,35 @@ main {
 }
 
 #logout {
-    border-top: 1px solid #e3e9f7;
+    border-top: 1px solid #f1f3f5;
     padding: 12px;
 }
 
 #logout_btn {
-  border: none;
-  padding: 12px;
-  font-size: 14px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  border-radius: 8px;
-  text-align: start;
-  cursor: pointer;
-  background-color: transparent;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-radius: 8px;
+    text-align: start;
+    cursor: pointer;
+    background-color: transparent;
+    color: #495057; /* Cinza intermediário */
 }
 
 #open_btn {
-  position: absolute;
-  top: 30px;
-  right: -10px;
-  background-color: #4f46e5;
-  color: #e3e9f7;
-  border-radius: 100%;
-  width: 20px;
-  height: 20px;
-  border: none;
-  cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    background-color: #007bff; /* Azul principal */
+    color: #ffffff;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 #open_btn_icon {
@@ -143,13 +147,13 @@ main {
 }
 
 .item-description {
-  width: 0px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  transition: width .6s;
-  height: 0px;
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    transition: width .6s;
+    height: 0px;
 }
 
 #sidebar.open-sidebar {
