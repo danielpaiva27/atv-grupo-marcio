@@ -183,8 +183,9 @@ main {
     padding: 10px;
 }
 
-.tu{
+.dudu{
     width: 100% !important;
+    display: flex;
 }
 
 input{
@@ -195,7 +196,7 @@ input{
 
 .card{
   margin: 10px;
-  max-width: 600px ;
+  max-width: 600px !important ;
   margin-top: 40px;
   height: 150px !important;
   border-radius: 20px;
