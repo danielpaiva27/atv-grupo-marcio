@@ -325,4 +325,20 @@ input{
     flex-direction: row;
     justify-content: center;
   }
+
+  #top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #pages {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #pages button {
+    margin: 10px;
+  }
   

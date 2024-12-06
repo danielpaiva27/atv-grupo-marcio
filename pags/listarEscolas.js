@@ -1,3 +1,4 @@
+
 Parse.serverURL = 'https://parseapi.back4app.com'; 
 
 Parse.initialize(
@@ -8,9 +9,11 @@ Parse.initialize(
 window.onload = getSchools(1)
 
 async function getSchools(page) {
+    let buttonBefore = document.getElementById('before')
+    let buttonAfter = document.getElementById('after')
     let listSchools = document.getElementById('schools')
     listSchools.innerHTML = ''
-
+    
     let skip = (page - 1) * 20;
     let limiteDeRegisros = 20;
 
@@ -22,7 +25,6 @@ async function getSchools(page) {
     let dataSchools = await querySchools.find()
 
     dataSchools.forEach(async (school)=>{
-        console.log(school.get('NO_ENTIDADE'));
         
         let container = document.createElement('div')
         container.classList.add('card')
@@ -54,9 +56,13 @@ async function getSchools(page) {
         let acessNet = document.createElement('p')
         acessNet.textContent = `Acesso à internet: ${school.get('IN_INTERNET') == 1 ? 'Possui' : 'Não possui'}`
 
+        let acesslibrary = document.createElement('p')
+        acesslibrary.textContent = `Acesso à biblioteca: ${school.get('IN_BIBLIOTECA') == 1 ? 'Possui' : 'Não possui'}`
+
         infosSchool.appendChild(regionText)
         infosSchool.appendChild(mesorregionText)
         infosSchool.appendChild(acessNet)
+        infosSchool.appendChild(acesslibrary)
 
         nameSchool.appendChild(nameSchoolText)
         container.appendChild(nameSchool)
@@ -64,5 +70,19 @@ async function getSchools(page) {
         listSchools.appendChild(container)
     })
 
-    localStorage.setItem('page',page+1)
+    localStorage.setItem('page',page)
+    
+    if(localStorage.getItem('page') == 1){
+        buttonBefore.disabled = true
+    } else {
+        buttonBefore.disabled = false
+    }
+    
+    buttonBefore.onclick = async ()=>{
+        await getSchools(Number(localStorage.getItem('page')) - 1)
+    }
+    buttonAfter.onclick = async ()=>{
+        await getSchools(Number(localStorage.getItem('page')) + 1)
+    }
+    
 }
