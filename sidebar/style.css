@@ -221,13 +221,6 @@ input{
   color: #F7F4EF;
 }
 
-
-
-
-
-
-
-
 .card-text{
   font-weight: 600;
 }
@@ -236,4 +229,82 @@ input{
   font-weight: 700;
 }
 
+/* css do crud */
 
+.crud {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .crud h1, .crud h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .crud label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .crud input[type="text"],
+  .crud select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .crud button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #5B59D5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .crud button:hover {
+    background-color: #424099;
+  }
+  
+  .crud ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .crud ul li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .crud ul li button {
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #42DAC2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .crud ul li button:hover {
+    background-color: #2c8f80;
+  }
+  
