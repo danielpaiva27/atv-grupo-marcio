@@ -54,6 +54,7 @@ main {
     border-radius: 20px;
 }
 
+
 #user_infos {
     display: flex;
     flex-direction: column;
@@ -188,7 +189,13 @@ main {
     width: 100% !important;
     display: flex;
    
-    text-align: center;
+    
+}
+
+.tit{
+  text-align: center !important;
+  padding: 10px !important;
+  align-items: center;
 }
 
 input{
