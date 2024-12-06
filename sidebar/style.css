@@ -15,7 +15,6 @@ body {
 
 main {
     padding: 20px;
-    position: fixed;
     z-index: 1;
     padding-left: calc(82px + 20px);
     width: 100% !important;
@@ -312,5 +311,21 @@ input{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+  }
+
+  #top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #pages {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #pages button {
+    margin: 10px;
   }
   
