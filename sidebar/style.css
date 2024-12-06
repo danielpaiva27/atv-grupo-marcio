@@ -18,6 +18,7 @@ main {
     position: fixed;
     z-index: 1;
     padding-left: calc(82px + 20px);
+    width: 100% !important;
 }
 
 #sidebar {
@@ -169,3 +170,69 @@ main {
     justify-content: flex-start;
     gap: 14px;
 }
+
+
+.input-group{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+
+.i{
+    padding: 10px;
+}
+
+.tu{
+    width: 100% !important;
+}
+
+input{
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.card{
+  margin: 10px;
+  max-width: 600px ;
+  margin-top: 40px;
+  height: 150px !important;
+  border-radius: 20px;
+  min-height: 180px;
+ 
+  box-shadow: 3px 2px 8px #474747;
+  min-width: 240px ;
+  padding: 20px !important;
+
+}
+
+.data{
+
+
+  color: #888888;
+  font-size: 12px;
+}
+
+
+
+.head{
+  color: #F7F4EF;
+}
+
+
+
+
+
+
+
+
+.card-text{
+  font-weight: 600;
+}
+
+.card-title{
+  font-weight: 700;
+}
+
+
