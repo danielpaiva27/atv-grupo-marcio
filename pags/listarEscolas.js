@@ -13,7 +13,6 @@ async function getSchools(page) {
     let buttonAfter = document.getElementById('after')
     let listSchools = document.getElementById('schools')
     listSchools.innerHTML = ''
-    console.log(page);
     
     let skip = (page - 1) * 20;
     let limiteDeRegisros = 20;
