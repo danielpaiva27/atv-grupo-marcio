@@ -13,8 +13,10 @@ body {
     background-color: #f8f9fa; /* Cinza claro para fundo geral */
 }
 
+
 main {
     padding: 20px;
+    
     z-index: 1;
     padding-left: calc(82px + 20px);
     width: 100% !important;
@@ -27,7 +29,7 @@ main {
     background-color: #ffffff; /* Branco para um contraste leve */
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
-    position: relative;
+    position: fixed;
     transition: all .5s;
     min-width: 82px;
     z-index: 2;
@@ -51,6 +53,7 @@ main {
     object-fit: cover;
     border-radius: 20px;
 }
+
 
 #user_infos {
     display: flex;
@@ -185,6 +188,14 @@ main {
 .dudu{
     width: 100% !important;
     display: flex;
+   
+    
+}
+
+.tit{
+  text-align: center !important;
+  padding: 10px !important;
+  align-items: center;
 }
 
 input{
@@ -195,15 +206,16 @@ input{
 
 .card{
   margin: 10px;
-  max-width: 600px !important ;
+  max-width: 300px !important ;
   margin-top: 40px;
   height: 150px !important;
   border-radius: 20px;
   min-height: 180px;
- 
+
   box-shadow: 3px 2px 8px #474747;
   min-width: 240px ;
   padding: 20px !important;
+ 
 
 }
 
@@ -310,7 +322,8 @@ input{
   #schools {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
   }
 
   #top {
