@@ -11,8 +11,9 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="/sidebar/style.css" />
-    <script type="module" src="/sidebar/script.js"></script>
-    
+    <script type="module" src="/sidebar/script.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/parse@3.3.0/dist/parse.min.js"></script>
+    <script src="./listarEscolas.js" defer></script>
     <title>Listar Escolas</title>
   </head>
 
@@ -25,16 +26,16 @@
 
         <ul id="side_items">
           <li class="side-item">
-            <a href="/pags/dashboard.html">
-              <i class="fa-solid fa-chart-line"></i>
-              <span class="item-description"> Dashboard </span>
+            <a href="/pags/index.html">
+              <i class="fa-solid fa-home"></i>
+              <span class="item-description"> Home </span>
             </a>
           </li>
 
           <li class="side-item">
-            <a href="/pags/index.html">
-              <i class="fa-solid fa-home"></i>
-              <span class="item-description"> Home </span>
+            <a href="/pags/dashboard.html">
+              <i class="fa-solid fa-chart-line"></i>
+              <span class="item-description"> Dashboard </span>
             </a>
           </li>
 
@@ -61,7 +62,7 @@
      
     </div>
 
-      <div class="dudu d-flex flex-wrap justify-content-evenly">
+      <div id="schools" class="dudu d-flex flex-wrap justify-content-evenly">
        
           <div class="card d-flex flex-column justify-content-center">
          
@@ -73,20 +74,9 @@
                 <p class="card-text">pscicologos: 3</p>
                 <p>endereço: rua da aurora 35</p>
             
-            </div>
-          </div>
-          <div class="card d-flex flex-column justify-content-center">
-            
-
-              <div class="txt d-flex flex-row justify-content-center">
-                <p class="card-text">Ginasio pernambunaco</p>
               </div>
+          </div>
 
-              <div class="data d-flex flex-row justify-content-between">
-                <p class="card-text">pscicologos: 3</p>
-                <p>endereço: rua da aurora 35</p>
-
-      </div>
           </div>
     </main>
   </body>

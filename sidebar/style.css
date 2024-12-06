@@ -307,4 +307,10 @@ input{
   .crud ul li button:hover {
     background-color: #2c8f80;
   }
+
+  #schools {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
   
