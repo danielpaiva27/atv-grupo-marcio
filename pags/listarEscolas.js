@@ -86,3 +86,9 @@ async function getSchools(page) {
     }
     
 }
+
+async function fetchSchoool() {
+    let pesquisa = document.getElementById('addon-wrapping')
+
+    
+}
